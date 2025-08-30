@@ -3,57 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahakal Travels - Booking</title>
+    <title>Mahakal Travels</title>
     <link rel="stylesheet" href="style.css">
-</head>body {
-    background-image: url('path-to-your-image.jpg');
-    background-size: cover;
-}
-
+</head>
 <body>
     <header>
         <h1>Welcome to Mahakal Travels</h1>
         <p>Your journey to comfort and safety</p>
     </header>
 
-    <section class="booking-form">
+    <section class="form-container">
         <h2>Book Your Ride</h2>
-        <form action="submit_form.php" method="POST">
-            <label for="pickup-location">From (Pickup Location):</label>
-            <input type="text" id="pickup-location" name="pickup-location" placeholder="e.g. Ujjain Railway Station" required>
-
+        <form action="" method="POST">
+            <label for="pickup">From (Pickup Location):</label>
+            <input type="text" id="pickup" name="pickup" placeholder="e.g. Ujjain Railway Station" required>
+            
             <label for="destination">To (Destination):</label>
             <input type="text" id="destination" name="destination" placeholder="e.g. Mahakaleshwar Temple" required>
-
+            
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required>
-
+            
             <label for="time">Time:</label>
             <input type="time" id="time" name="time" required>
-
+            
             <label for="passengers">Passengers:</label>
-            <input type="number" id="passengers" name="passengers" min="1" max="10" required>
+            <input type="number" id="passengers" name="passengers" min="1" required>
 
-            <label for="vehicle-type">Vehicle Type:</label>
-            <select id="vehicle-type" name="vehicle-type" required>
+            <label for="vehicle">Vehicle Type:</label>
+            <select id="vehicle" name="vehicle" required>
                 <option value="hatchback">Hatchback</option>
-                <option value="sedan">Sedan</option>
                 <option value="suv">SUV</option>
+                <option value="sedan">Sedan</option>
             </select>
 
-            <label for="your-name">Your Name:</label>
-            <input type="text" id="your-name" name="your-name" placeholder="Your full name" required>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-            <label for="mobile-number">Mobile Number:</label>
-            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Your mobile number" required>
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Your mobile number" required>
 
-            <button type="submit">Submit Booking</button>
+            <button type="submit">Submit</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2025 Mahakal Travels | Owner: Devesh Singh Chauhan</p>
+        <p>Mahakal Travels | Contact: 9351488209 | mahadevtravel001@gmail.com</p>
     </footer>
-
 </body>
 </html>
