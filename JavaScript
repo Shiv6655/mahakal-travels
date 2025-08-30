@@ -1,0 +1,10 @@
+// Form validation
+document.querySelector("form").addEventListener("submit", function(event) {
+    var date = document.getElementById("date").value;
+    var time = document.getElementById("time").value;
+
+    if (!date || !time) {
+        alert("Please fill in both date and time.");
+        event.preventDefault(); // Prevent form submission
+    }
+});
