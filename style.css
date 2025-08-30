@@ -1,104 +1,45 @@
-
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
+    background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #343a40;
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+h1 {
+    font-size: 36px;
 }
 
-nav {
-    background: #34495e;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    margin: 0 15px;
-    font-size: 1.2em;
-}
-
-nav a:hover {
-    background: #16a085;
-}
-
-.container {
-    max-width: 1200px;
+.form-container {
+    width: 50%;
     margin: 0 auto;
-    padding: 20px;
-}
-
-.intro {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.intro h2 {
-    font-size: 2.5em;
-    color: #16a085;
-}
-
-.intro p {
-    font-size: 1.2em;
-    color: #555;
-}
-
-.booking-form {
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.booking-form h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.booking-form input, .booking-form select {
+form input, form select, form button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
 
-.booking-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+form button {
+    background-color: #333;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
+    cursor: pointer;
 }
 
-.booking-form button:hover {
-    background-color: #0056b3;
-}
-
-footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-.contact-info {
-    font-size: 1.1em;
+form button:hover {
+    background-color: #555;
 }
