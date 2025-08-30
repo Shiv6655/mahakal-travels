@@ -1,71 +1,104 @@
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    color: #333;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  background: rgba(0,0,0,0.6);
-  position: fixed;
-  width: 100%;
-  top: 0;
+header {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
 
-.navbar .logo {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
-.navbar nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 16px;
+nav {
+    background: #34495e;
+    padding: 10px 0;
+    text-align: center;
 }
 
-.navbar nav a:hover {
-  color: orange;
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    margin: 0 15px;
+    font-size: 1.2em;
 }
 
-.hero {
-  background: url('mahadev.jpg') no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
+nav a:hover {
+    background: #16a085;
 }
 
-.hero .overlay {
-  background: rgba(0,0,0,0.6);
-  padding: 50px;
-  border-radius: 10px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
+.intro {
+    text-align: center;
+    margin: 40px 0;
 }
 
-.hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
+.intro h2 {
+    font-size: 2.5em;
+    color: #16a085;
 }
 
-.btn {
-  padding: 12px 25px;
-  background: orange;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 18px;
+.intro p {
+    font-size: 1.2em;
+    color: #555;
 }
-.btn:hover {
-  background: darkorange;
+
+.booking-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.booking-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.booking-form input, .booking-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.booking-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.booking-form button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.contact-info {
+    font-size: 1.1em;
 }

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahakal Travels</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.5.0/dist/email.min.js"></script>
+    <script>
+        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                pickupLocation: document.getElementById('pickup').value,
+                destination: document.getElementById('destination').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                passengers: document.getElementById('passengers').value,
+                vehicleType: document.getElementById('vehicleType').value,
+                clientName: document.getElementById('clientName').value,
+                clientMobile: document.getElementById('clientMobile').value,
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    alert("Booking details sent to your email!");
+                }, function(error) {
+                    alert("Error sending data: " + error.text);
+                });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Mahakal Travels</h1>
+    <p>Your Journey to Comfort and Safety</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ride.html">Ride</a>
+    <a href="packages.html">Packages</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <section class="intro">
+        <h2>Welcome to Mahakal Travels</h2>
+        <p>Offering safe, comfortable, and affordable rides for all your travel needs.</p>
+    </section>
+
+    <section class="booking-form">
+        <h3>Book Your Ride</h3>
+        <form id="bookingForm">
+            <input type="text" id="pickup" placeholder="From (Pickup Location)" required>
+            <input type="text" id="destination" placeholder="To (Destination)" required>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <select id="vehicleType" required>
+                <option value="">Select Vehicle Type</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="SUV">SUV</option>
+                <option value="Minibus">Minibus</option>
+            </select>
+            <input type="number" id="passengers" placeholder="Passengers" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p class="contact-info">Owner: Devesh Singh Chauhan | Contact: +91 9351488209</p>
+    <p>&copy; 2025 Mahakal Travels</p>
+</footer>
+
+</body>
+</html>
