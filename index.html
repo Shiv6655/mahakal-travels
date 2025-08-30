@@ -166,3 +166,45 @@
 
 </body>
 </html>
+<!-- Add this in your form -->
+<form id="bookingForm">
+    <input type="text" id="pickup" placeholder="From (Pickup Location)" required>
+    <input type="text" id="destination" placeholder="To (Destination)" required>
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+    <input type="number" id="passengers" placeholder="Passengers" required>
+    <select id="vehicleType" required>
+        <option value="Hatchback">Hatchback</option>
+        <option value="SUV">SUV</option>
+        <option value="Minibus">Minibus</option>
+    </select>
+    <button type="submit">Book Now</button>
+</form>
+
+<!-- Add JavaScript to handle form submission -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.5.0/dist/email.min.js"></script>
+<script>
+    (function () {
+        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                pickup: document.getElementById('pickup').value,
+                destination: document.getElementById('destination').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                passengers: document.getElementById('passengers').value,
+                vehicleType: document.getElementById('vehicleType').value,
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    alert("Booking successful, you'll receive a confirmation email.");
+                }, function(error) {
+                    alert("Error: " + error.text);
+                });
+        });
+    })();
+</script>
