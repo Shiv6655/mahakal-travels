@@ -10,79 +10,88 @@
       font-family: Arial, sans-serif;
       background: url('mahadev.jpg') no-repeat center center/cover;
       color: white;
+    }
+
+    /* Overlay for dark effect */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 20px;
       text-align: center;
     }
+
     header {
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: bold;
-      text-transform: uppercase;
       letter-spacing: 2px;
+      padding: 20px;
+      text-transform: uppercase;
     }
+
+    /* Booking Form */
     .form-container {
-      margin: 50px auto;
-      background: rgba(0,0,0,0.6);
+      background: rgba(255,255,255,0.9);
+      color: black;
       padding: 30px;
       border-radius: 12px;
       width: 90%;
       max-width: 400px;
+      margin: 50px auto;
+      text-align: left;
     }
-    input, textarea {
-      width: 90%;
-      padding: 12px;
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
       margin: 10px 0;
-      border: none;
+      border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 16px;
     }
+
     button {
-      padding: 12px 20px;
+      width: 100%;
+      padding: 12px;
+      background: #333;
+      color: white;
+      font-size: 16px;
       border: none;
       border-radius: 6px;
-      font-size: 16px;
       cursor: pointer;
-      margin-top: 10px;
     }
-    .btn-submit {
-      background: #ff9800;
-      color: white;
-    }
-    .btn-whatsapp {
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      border-radius: 6px;
-    }
-    footer {
-      margin-top: 30px;
-      background: rgba(0,0,0,0.6);
-      padding: 15px;
+
+    button:hover {
+      background: #555;
     }
   </style>
 </head>
 <body>
-  <header>🚩 Mahakal Travels 🚩</header>
+  <div class="overlay">
+    <header>
+      🚖 Mahakal Travels
+    </header>
 
-  <div class="form-container">
-    <h2>Book Your Journey</h2>
-    <form>
-      <input type="text" placeholder="From (Pickup Location)" required><br>
-      <input type="text" placeholder="To (Destination)" required><br>
-      <input type="date" required><br>
-      <input type="text" placeholder="Your Name" required><br>
-      <input type="tel" placeholder="Mobile Number" required><br>
-      <button class="btn-submit">Submit</button>
-    </form>
-    <a class="btn-whatsapp" href="https://wa.me/9351488209" target="_blank">📲 Contact on WhatsApp</a>
+    <div class="form-container">
+      <h2>Book Your Ride</h2>
+      <form>
+        <label>From:</label>
+        <input type="text" placeholder="Enter Pickup Location" required>
+
+        <label>To:</label>
+        <input type="text" placeholder="Enter Destination" required>
+
+        <label>Date:</label>
+        <input type="date" required>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
   </div>
-
-  <footer>
-    <p>Owner: Devesh Singh Chauhan</p>
-    <p>📞 9351488209</p>
-  </footer>
 </body>
 </html>
