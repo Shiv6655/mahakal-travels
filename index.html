@@ -1,3 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahakal Travels</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.5.0/dist/email.min.js"></script>
+    <script>
+        emailjs.init("YOUR_USER_ID");  // Replace with your EmailJS user ID
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();  // Prevent the form from submitting in the default way
+
+            // Collect form data
+            const formData = {
+                pickupLocation: document.getElementById('pickup').value,
+                destination: document.getElementById('destination').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                passengers: document.getElementById('passengers').value,
+                vehicleType: document.getElementById('vehicleType').value,
+                clientName: document.getElementById('clientName').value,
+                clientMobile: document.getElementById('clientMobile').value,
+            };
+
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    alert("Booking details sent to your email!");
+                }, function(error) {
+                    alert("Error sending email: " + error.text);
+                });
+
+            // WhatsApp link to send message
+            const message = `
+                *New Booking Request* 🚖
+                Name: ${formData.clientName}
+                Mobile: ${formData.clientMobile}
+                Pickup Location: ${formData.pickupLocation}
+                Destination: ${formData.destination}
+                Date: ${formData.date}
+                Time: ${formData.time}
+                Passengers: ${formData.passengers}
+                Vehicle Type: ${formData.vehicleType}
+            `;
+            const whatsappLink = `https://wa.me/9351488209?text=${encodeURIComponent(message)}`;
+            window.open(whatsappLink, '_blank');
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Mahakal Travels</h1>
+        <p>Your Journey to Comfort and Safety</p>
+    </header>
+
+    <div class="container">
+        <section class="booking-form">
+            <h3>Book Your Ride</h3>
+            <form id="bookingForm">
+                <input type="text" id="pickup" placeholder="From (Pickup Location)" required>
+                <input type="text" id="destination" placeholder="To (Destination)" required>
+                <input type="date" id="date" required>
+                <input type="time" id="time" required>
+                <select id="vehicleType" required>
+                    <option value="">Select Vehicle Type</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Minibus">Minibus</option>
+                </select>
+                <input type="number" id="passengers" placeholder="Passengers" required>
+                <input type="text" id="clientName" placeholder="Your Name" required>
+                <input type="tel" id="clientMobile" placeholder="Mobile Number" required>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p class="contact-info">Owner: Devesh Singh Chauhan | Contact: +91 9351488209 | Email: mahadevtravel001@gmail.com</p>
+        <p>&copy; 2025 Mahakal Travels</p>
+    </footer>
+
+</body>
+</html>
 
 <!DOCTYPE html>
 <html lang="en">
