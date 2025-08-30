@@ -1,47 +1,9 @@
-<script>
-    emailjs.init("YOUR_USER_ID");  // Replace with your EmailJS user ID
-
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
-        e.preventDefault();  // Prevent the form from submitting in the default way
-
-        // Collect form data
-        const formData = {
-            pickupLocation: document.getElementById('pickup').value,
-            destination: document.getElementById('destination').value,
-            date: document.getElementById('date').value,
-            time: document.getElementById('time').value,
-            passengers: document.getElementById('passengers').value,
-            vehicleType: document.getElementById('vehicleType').value,
-            clientName: document.getElementById('clientName').value,
-            clientMobile: document.getElementById('clientMobile').value,
-        };
-
-        // Debugging: Log form data
-        console.log("Booking Form Submitted: ", formData);
-
-        // Send email using EmailJS
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-            .then(function(response) {
-                console.log("Email sent successfully", response);
-                alert("Booking details sent to your email!");
-            }, function(error) {
-                console.log("Email sending failed", error);
-                alert("Error sending email: " + error.text);
-            });
-
-        // Optionally, open WhatsApp with booking details
-        const message = `
-            *New Booking Request* 🚖
-            Name: ${formData.clientName}
-            Mobile: ${formData.clientMobile}
-            Pickup Location: ${formData.pickupLocation}
-            Destination: ${formData.destination}
-            Date: ${formData.date}
-            Time: ${formData.time}
-            Passengers: ${formData.passengers}
-            Vehicle Type: ${formData.vehicleType}
-        `;
-        const whatsappLink = `https://wa.me/9351488209?text=${encodeURIComponent(message)}`;
-        window.open(whatsappLink, '_blank');
-    });
-</script>
+Mahadev-Travels/
+|-- index.html
+|-- contact.html
+|-- admin.html
+|-- packages.html
+|-- style.css
+|-- images/
+   |-- maha.jpg
+|-- README.md
