@@ -30,42 +30,87 @@
             padding: 20px;
         }
 
-        .service {
-            display: flex;
-            justify-content: space-between;
+        .booking-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .booking-form h2 {
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .service img {
-            max-width: 100%;
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        .booking-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+
+        .booking-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .vehicle-selection {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .vehicle-selection h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .vehicle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .vehicle img {
+            max-width: 100px;
             height: auto;
             border-radius: 8px;
         }
 
-        .service-info {
+        .vehicle-info {
             flex: 1;
             padding: 10px;
         }
 
-        .service-info h2 {
-            color: #007bff;
-            font-size: 1.8em;
-            margin-bottom: 10px;
+        .vehicle-info h3 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
         }
 
-        .service-info p {
-            font-size: 1em;
+        .vehicle-info .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: red;
             margin-bottom: 15px;
         }
 
-        .service-info .price {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: red;
-            margin-bottom: 20px;
-        }
-
-        .service-info .btn {
+        .vehicle-info .btn {
             background-color: #007bff;
             color: white;
             padding: 10px 20px;
@@ -73,7 +118,7 @@
             border-radius: 5px;
         }
 
-        .service-info .btn:hover {
+        .vehicle-info .btn:hover {
             background-color: #0056b3;
         }
 
@@ -91,41 +136,85 @@
             margin: 0;
             font-size: 1em;
         }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Mahakal Travels</h1>
-        <p>Your Journey to Comfort and Safety</p>
-    </header>
 
-    <div class="container">
-        <section class="service">
-            <img src="car-image.jpg" alt="Family SUV">
-            <div class="service-info">
-                <h2>Family SUV</h2>
-                <p>A spacious vehicle for family trips with all the comfort you need.</p>
-                <div class="price">Koh Chang: 3,900 THB</div>
-                <a href="#" class="btn">Book Family SUV</a>
-            </div>
-        </section>
+<header>
+    <h1>Mahakal Travels</h1>
+    <p>Your Journey to Comfort and Safety</p>
+</header>
 
-        <section class="service">
-            <img src="car-image.jpg" alt="VIP Minibus">
-            <div class="service-info">
-                <h2>VIP Minibus</h2>
-                <p>Perfect for long-distance travel with luxury and space.</p>
-                <div class="price">Koh Samet: 5,400 THB</div>
-                <a href="#" class="btn">Book VIP Minibus</a>
-            </div>
-        </section>
-
-        <!-- More service sections as needed -->
+<div class="container">
+    <!-- Booking Form -->
+    <div class="booking-form">
+        <h2>Book Your Ride</h2>
+        <form id="bookingForm">
+            <input type="text" id="pickupLocation" placeholder="From (Pickup Location)" required>
+            <input type="text" id="destination" placeholder="To (Destination)" required>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <input type="number" id="passengers" placeholder="Passengers" required>
+            <select id="vehicleType" required>
+                <option value="">Select Vehicle Type</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="SUV">SUV</option>
+                <option value="Minibus">Minibus</option>
+            </select>
+            <button type="submit">Book Now</button>
+        </form>
     </div>
 
-    <footer>
-        <p class="contact-info">Owner: Devesh Singh Chauhan | Contact: +91 9351488209</p>
-        <p>© 2025 Mahakal Travels</p>
-    </footer>
+    <!-- Vehicle Selection (Hidden by default) -->
+    <div class="vehicle-selection" id="vehicleSelection">
+        <h2>Select Your Vehicle</h2>
+
+        <div class="vehicle">
+            <img src="car1.jpg" alt="Hatchback">
+            <div class="vehicle-info">
+                <h3>Hatchback</h3>
+                <p>Comfortable for short trips.</p>
+                <div class="price">₹ 1,000</div>
+                <a href="#" class="btn">Book Hatchback</a>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="car2.jpg" alt="SUV">
+            <div class="vehicle-info">
+                <h3>SUV</h3>
+                <p>Spacious for long trips with family.</p>
+                <div class="price">₹ 2,500</div>
+                <a href="#" class="btn">Book SUV</a>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="car3.jpg" alt="Minibus">
+            <div class="vehicle-info">
+                <h3>Minibus</h3>
+                <p>Ideal for large groups.</p>
+                <div class="price">₹ 4,000</div>
+                <a href="#" class="btn">Book Minibus</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p class="contact-info">Owner: Devesh Singh Chauhan | Contact: +91 9351488209</p>
+    <p>© 2025 Mahakal Travels</p>
+</footer>
+
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Show vehicle selection
+        document.querySelector('.vehicle-selection').style.display = 'block';
+    });
+</script>
+
 </body>
 </html>
