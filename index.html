@@ -5,139 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahakal Travels</title>
     <style>
-        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            background: #f4f4f4;
+            color: #333;
         }
 
-        /* Header Section */
         header {
-            background-color: #4CAF50;
+            background-color: #343a40;
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 20px 0;
         }
 
         header h1 {
+            margin: 0;
             font-size: 2.5em;
         }
 
-        /* Hero Section */
-        .hero {
-            background: url('maha_dev_image.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .hero h2 {
-            font-size: 3em;
+        .service {
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 20px;
         }
 
-        /* Form Section */
-        .booking-form {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            margin: 30px auto;
-            width: 50%;
-            border-radius: 10px;
+        .service img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
 
-        .booking-form input, .booking-form select {
-            width: 100%;
+        .service-info {
+            flex: 1;
             padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
         }
 
-        .booking-form button {
-            background-color: #FF9800;
+        .service-info h2 {
+            color: #007bff;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .service-info p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .service-info .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .service-info .btn {
+            background-color: #007bff;
             color: white;
-            padding: 15px;
-            width: 100%;
-            border: none;
-            font-size: 1.2em;
-            cursor: pointer;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
         }
 
-        .booking-form button:hover {
-            background-color: #FF5722;
+        .service-info .btn:hover {
+            background-color: #0056b3;
         }
 
-        /* Footer Section */
         footer {
-            background-color: #4CAF50;
+            background-color: #343a40;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
 
-        footer a {
-            color: white;
-            text-decoration: none;
+        footer .contact-info {
+            margin: 0;
+            font-size: 1em;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header>
         <h1>Mahakal Travels</h1>
+        <p>Your Journey to Comfort and Safety</p>
     </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <h2>Your Journey to Comfort and Safety</h2>
+    <div class="container">
+        <section class="service">
+            <img src="car-image.jpg" alt="Family SUV">
+            <div class="service-info">
+                <h2>Family SUV</h2>
+                <p>A spacious vehicle for family trips with all the comfort you need.</p>
+                <div class="price">Koh Chang: 3,900 THB</div>
+                <a href="#" class="btn">Book Family SUV</a>
+            </div>
+        </section>
+
+        <section class="service">
+            <img src="car-image.jpg" alt="VIP Minibus">
+            <div class="service-info">
+                <h2>VIP Minibus</h2>
+                <p>Perfect for long-distance travel with luxury and space.</p>
+                <div class="price">Koh Samet: 5,400 THB</div>
+                <a href="#" class="btn">Book VIP Minibus</a>
+            </div>
+        </section>
+
+        <!-- More service sections as needed -->
     </div>
 
-    <!-- Booking Form -->
-    <div class="booking-form">
-        <h3>Book Your Ride</h3>
-        <form action="#">
-            <label for="pickup-location">From (Pickup Location)</label>
-            <input type="text" id="pickup-location" name="pickup-location" placeholder="e.g. Ujjain Railway Station" required>
-
-            <label for="destination">To (Destination)</label>
-            <input type="text" id="destination" name="destination" placeholder="e.g. Mahakaleshwar Temple" required>
-
-            <label for="date">Date</label>
-            <input type="date" id="date" name="date" required>
-
-            <label for="time">Time</label>
-            <input type="time" id="time" name="time" required>
-
-            <label for="passengers">Passengers</label>
-            <select id="passengers" name="passengers">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-
-            <label for="vehicle">Vehicle Type</label>
-            <select id="vehicle" name="vehicle">
-                <option value="hatchback">Hatchback</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-            </select>
-
-            <button type="submit">Book Now</button>
-        </form>
-    </div>
-
-    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Mahakal Travels | Owner: Devesh Singh Chauhan | <a href="tel:+9351488209">Call: 9351488209</a></p>
+        <p class="contact-info">Owner: Devesh Singh Chauhan | Contact: +91 9351488209</p>
+        <p>© 2025 Mahakal Travels</p>
     </footer>
-
 </body>
 </html>
