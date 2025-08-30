@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahakal Travels</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('mahadev.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+    }
+    header {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .form-container {
+      margin: 50px auto;
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+    }
+    input, textarea {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-submit {
+      background: #ff9800;
+      color: white;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      border-radius: 6px;
+    }
+    footer {
+      margin-top: 30px;
+      background: rgba(0,0,0,0.6);
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>🚩 Mahakal Travels 🚩</header>
+
+  <div class="form-container">
+    <h2>Book Your Journey</h2>
+    <form>
+      <input type="text" placeholder="From (Pickup Location)" required><br>
+      <input type="text" placeholder="To (Destination)" required><br>
+      <input type="date" required><br>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="tel" placeholder="Mobile Number" required><br>
+      <button class="btn-submit">Submit</button>
+    </form>
+    <a class="btn-whatsapp" href="https://wa.me/9351488209" target="_blank">📲 Contact on WhatsApp</a>
+  </div>
+
+  <footer>
+    <p>Owner: Devesh Singh Chauhan</p>
+    <p>📞 9351488209</p>
+  </footer>
+</body>
+</html>
