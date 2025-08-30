@@ -4,94 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mahakal Travels</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('mahadev.jpg') no-repeat center center/cover;
-      color: white;
-    }
-
-    /* Overlay for dark effect */
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header {
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      padding: 20px;
-      text-transform: uppercase;
-    }
-
-    /* Booking Form */
-    .form-container {
-      background: rgba(255,255,255,0.9);
-      color: black;
-      padding: 30px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      margin: 50px auto;
-      text-align: left;
-    }
-
-    .form-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #333;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="overlay">
-    <header>
-      🚖 Mahakal Travels
-    </header>
+  <header class="navbar">
+    <div class="logo">🚖 Mahakal Travels</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="booking.html">Book Ride</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <div class="form-container">
-      <h2>Book Your Ride</h2>
-      <form>
-        <label>From:</label>
-        <input type="text" placeholder="Enter Pickup Location" required>
-
-        <label>To:</label>
-        <input type="text" placeholder="Enter Destination" required>
-
-        <label>Date:</label>
-        <input type="date" required>
-
-        <button type="submit">Book Now</button>
-      </form>
+  <section class="hero">
+    <div class="overlay">
+      <h1>Welcome to Mahakal Travels</h1>
+      <p>Safe, Affordable & Comfortable Rides</p>
+      <a href="booking.html" class="btn">Book Now</a>
     </div>
-  </div>
+  </section>
 </body>
 </html>
