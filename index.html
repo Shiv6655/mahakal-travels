@@ -3,167 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahakal Travels</title>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.5.0/dist/email.min.js"></script>
-    <script>
-        emailjs.init("YOUR_USER_ID");  // Replace with your EmailJS user ID
-
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();  // Prevent the form from submitting in the default way
-
-            // Collect form data
-            const formData = {
-                pickupLocation: document.getElementById('pickup').value,
-                destination: document.getElementById('destination').value,
-                date: document.getElementById('date').value,
-                time: document.getElementById('time').value,
-                passengers: document.getElementById('passengers').value,
-                vehicleType: document.getElementById('vehicleType').value,
-                clientName: document.getElementById('clientName').value,
-                clientMobile: document.getElementById('clientMobile').value,
-            };
-
-            // Send email using EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-                .then(function(response) {
-                    alert("Booking details sent to your email!");
-                }, function(error) {
-                    alert("Error sending email: " + error.text);
-                });
-
-            // WhatsApp link to send message
-            const message = `
-                *New Booking Request* 🚖
-                Name: ${formData.clientName}
-                Mobile: ${formData.clientMobile}
-                Pickup Location: ${formData.pickupLocation}
-                Destination: ${formData.destination}
-                Date: ${formData.date}
-                Time: ${formData.time}
-                Passengers: ${formData.passengers}
-                Vehicle Type: ${formData.vehicleType}
-            `;
-            const whatsappLink = `https://wa.me/9351488209?text=${encodeURIComponent(message)}`;
-            window.open(whatsappLink, '_blank');
-        });
-    </script>
+    <title>Mahadev Travels</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <h1>Mahakal Travels</h1>
-        <p>Your Journey to Comfort and Safety</p>
+        <h1>Welcome to Mahadev Travels</h1>
+        <p>Your journey to comfort and safety</p>
     </header>
 
-    <div class="container">
-        <section class="booking-form">
-            <h3>Book Your Ride</h3>
-            <form id="bookingForm">
-                <input type="text" id="pickup" placeholder="From (Pickup Location)" required>
-                <input type="text" id="destination" placeholder="To (Destination)" required>
-                <input type="date" id="date" required>
-                <input type="time" id="time" required>
-                <select id="vehicleType" required>
-                    <option value="">Select Vehicle Type</option>
-                    <option value="Hatchback">Hatchback</option>
-                    <option value="SUV">SUV</option>
-                    <option value="Minibus">Minibus</option>
-                </select>
-                <input type="number" id="passengers" placeholder="Passengers" required>
-                <input type="text" id="clientName" placeholder="Your Name" required>
-                <input type="tel" id="clientMobile" placeholder="Mobile Number" required>
-                <button type="submit">Book Now</button>
-            </form>
-        </section>
-    </div>
+    <div class="form-container">
+        <h2>Book Your Ride</h2>
+        <form action="booking-confirmation.html">
+            <label for="pickup-location">From (Pickup Location):</label>
+            <input type="text" id="pickup-location" name="pickup-location" placeholder="e.g. Ujjain Railway Station" required>
 
-    <footer>
-        <p class="contact-info">Owner: Devesh Singh Chauhan | Contact: +91 9351488209 | Email: mahadevtravel001@gmail.com</p>
-        <p>&copy; 2025 Mahakal Travels</p>
-    </footer>
+            <label for="destination">To (Destination):</label>
+            <input type="text" id="destination" name="destination" placeholder="e.g. Mahakaleshwar Temple" required>
 
-</body>
-</html>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahakal Travels</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.5.0/dist/email.min.js"></script>
-    <script>
-        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
 
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            <label for="passengers">Passengers:</label>
+            <input type="number" id="passengers" name="passengers" value="1" required>
 
-            const formData = {
-                pickupLocation: document.getElementById('pickup').value,
-                destination: document.getElementById('destination').value,
-                date: document.getElementById('date').value,
-                time: document.getElementById('time').value,
-                passengers: document.getElementById('passengers').value,
-                vehicleType: document.getElementById('vehicleType').value,
-                clientName: document.getElementById('clientName').value,
-                clientMobile: document.getElementById('clientMobile').value,
-            };
-
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-                .then(function(response) {
-                    alert("Booking details sent to your email!");
-                }, function(error) {
-                    alert("Error sending data: " + error.text);
-                });
-        });
-    </script>
-</head>
-<body>
-
-<header>
-    <h1>Mahakal Travels 🇮🇳</h1>
-    <p>Your Journey to Comfort and Safety</p>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="ride.html">Ride</a>
-    <a href="packages.html">Packages</a>
-    <a href="contact.html">Contact</a>
-</nav>
-
-<div class="container">
-    <section class="intro">
-        <h2>Welcome to Mahakal Travels</h2>
-        <p>Offering safe, comfortable, and affordable rides for all your travel needs.</p>
-    </section>
-
-    <section class="booking-form">
-        <h3>Book Your Ride</h3>
-        <form id="bookingForm">
-            <input type="text" id="pickup" placeholder="From (Pickup Location)" required>
-            <input type="text" id="destination" placeholder="To (Destination)" required>
-            <input type="date" id="date" required>
-            <input type="time" id="time" required>
-            <select id="vehicleType" required>
-                <option value="">Select Vehicle Type</option>
-                <option value="Hatchback">Hatchback</option>
-                <option value="SUV">SUV</option>
-                <option value="Minibus">Minibus</option>
+            <label for="vehicle-type">Vehicle Type:</label>
+            <select id="vehicle-type" name="vehicle-type" required>
+                <option value="hatchback">Hatchback</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
             </select>
-            <input type="number" id="passengers" placeholder="Passengers" required>
-            <input type="text" id="clientName" placeholder="Your Name" required>
-            <input type="tel" id="clientMobile" placeholder="Mobile Number" required>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="mobile-number">Mobile Number:</label>
+            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Your mobile number" required>
+
             <button type="submit">Book Now</button>
         </form>
-    </section>
-</div>
-
-<footer>
-    <p class="contact-info">Owner: Devesh Singh Chauhan | Contact: +91 9351488209 | Email: mahadevtravel001@gmail.com</p>
-    <p>&copy; 2025 Mahakal Travels</p>
-</footer>
-
+    </div>
 </body>
 </html>
